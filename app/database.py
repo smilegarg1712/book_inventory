@@ -6,7 +6,7 @@ import os
 load_dotenv()
 USER = os.getenv("DB_USER", "default_user")  # Default value if the env variable is not set
 PASSWORD = os.getenv("DB_PASSWORD", "default_password")
-SQLALCHEMY_DATABASE_URL = f"postgresql://{USER}:{PASSWORD}@localhost/bookstore_db"
+SQLALCHEMY_DATABASE_URL = f"postgresql://{USER}:{PASSWORD}@localhost:5432/bookstore_db"
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)

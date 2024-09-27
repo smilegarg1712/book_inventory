@@ -8,8 +8,12 @@ client = TestClient(app)
 # Test for creating a book
 def test_create_book():
     response = client.post("/books/", json={
-        "title": "Test Book"
-    })
+    "title": "Test Book",
+    "publication_date":"2024-09-28",
+    "price": 2000,
+    "author_id":5,
+    "genre_id":1
+})
     assert response.status_code == 200
     assert response.json()["title"] == "Test Book"
 

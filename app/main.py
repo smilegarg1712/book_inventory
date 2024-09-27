@@ -12,6 +12,7 @@ app = FastAPI(
     version="1.0.0",
 )
 
+
 # Include routers for different resources
 app.include_router(books.router)
 app.include_router(authors.router)
